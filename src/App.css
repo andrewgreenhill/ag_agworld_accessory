@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.loginBox {
+  background-color: #dddddd;
+}
+
+.loginIcon {
+  width: 90px;
+  height: 90px;
+}
