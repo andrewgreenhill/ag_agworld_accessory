@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const LoginScreen = (props) => {
-  const title = props.title;
-  const [userName, setUserName] = useState('Example User');
-  const [plainTextPassword, setPassword] = useState('secret123');
+  const { title, setUserId, userName, setUserName, setThumbURL } = props;
+  const [plainTextPassword, setPassword] = useState('notSecret');
 
   function attemptLogin() {
     fetch('https://randomuser.me/api/?results=1', {
@@ -12,13 +11,17 @@ const LoginScreen = (props) => {
     })
       .then((response) => response.json())
       .then((userJSON) => {
-        let randomUserName = userJSON.results[0].name;
+        const randomUserName = userJSON.results[0].name;
         if (!randomUserName) {
           console.error('Error: failed to get randomUserName');
           throw 'Error: failed to get randomUserName';
         }
-        console.log(randomUserName); // Verbose
-        setUserName(randomUserName.first + ' ' + randomUserName.last);
+        if (userName.toLowerCase() === 'example user') {
+          setUserName(randomUserName.first + ' ' + randomUserName.last);
+        }
+        setThumbURL(userJSON.results[0].picture.thumbnail);
+        const userID = parseInt(userJSON.results[0].id.value) || 1;
+        setTimeout(() => setUserId(userID), 50);
       })
       .catch(() => console.error('Error: tryToLogIn() failed!'));
   }
@@ -39,7 +42,7 @@ const LoginScreen = (props) => {
               type="text"
               name="userName"
               value={userName}
-              onChange={(evt) => setUserName(evt.target.value)}
+              onChange={(event) => setUserName(event.target.value)}
               className="QQQ"
               required
             ></input>
@@ -52,7 +55,7 @@ const LoginScreen = (props) => {
               type="password"
               name="password"
               value={plainTextPassword}
-              onChange={(evt) => setPassword(evt.target.value)}
+              onChange={(event) => setPassword(event.target.value)}
               className="QQQ"
               required
             ></input>
@@ -75,6 +78,10 @@ const LoginScreen = (props) => {
 // Prop Type Validation:
 LoginScreen.propTypes = {
   title: PropTypes.string,
+  setUserId: PropTypes.any,
+  userName: PropTypes.string,
+  setUserName: PropTypes.any,
+  setThumbURL: PropTypes.any,
 };
 
 export default LoginScreen;
