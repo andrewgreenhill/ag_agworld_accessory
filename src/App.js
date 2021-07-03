@@ -30,7 +30,7 @@ function App() {
         />
       );
     } else {
-      screen = <Main userId={userId} userName={userName} thumbURL={thumbURL} />;
+      screen = <Main title={title} userId={userId} userName={userName} thumbURL={thumbURL} />;
     }
   }
 

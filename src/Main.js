@@ -1,35 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { companyForUserID, farmsForCompanyID, fieldsForCompanyID } from './getAgworldData';
+import TopBar from './topBar';
 
 function Main(props) {
-  const { userId, userName, thumbURL } = props;
+  const { title, userId, userName, thumbURL } = props;
   let company;
+  let companyName;
   let farms;
   let fields;
 
-  company = companyForUserID(userId);
-  console.log(`Company name: ${company.attributes.name}`);
+  console.log(userName);
+  if (!company) {
+    company = companyForUserID(userId);
+    companyName = company.attributes.name;
+  }
+  console.log(`Company name: ${companyName}`);
 
-  farms = farmsForCompanyID(company.id);
+  if (!farms) farms = farmsForCompanyID(company.id);
   farms.forEach((farm) => {
     console.log(`Farm description: ${farm.attributes.description}`);
   });
 
-  fields = fieldsForCompanyID(company.id);
+  if (!fields) fields = fieldsForCompanyID(company.id);
   fields.forEach((field) => {
     console.log(`Field description: ${field.attributes.description}`);
   });
 
   return (
     <div>
-      <p>{userName}</p>
-      <img src={thumbURL} />
+      <TopBar title={title} companyName={companyName} thumbURL={thumbURL} />
+      <p></p>
     </div>
   );
 }
 
 Main.propTypes = {
+  title: PropTypes.string,
   userId: PropTypes.number,
   userName: PropTypes.string,
   thumbURL: PropTypes.string,

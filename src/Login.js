@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const LoginScreen = (props) => {
+function LoginScreen(props) {
   const { title, setUserId, userName, setUserName, setThumbURL } = props;
   const [plainTextPassword, setPassword] = useState('notSecret');
 
@@ -73,7 +73,7 @@ const LoginScreen = (props) => {
       </div>
     </>
   );
-};
+}
 
 // Prop Type Validation:
 LoginScreen.propTypes = {
