@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 function WeatherPage(props) {
@@ -6,12 +6,12 @@ function WeatherPage(props) {
 
   function toggleFarmSelection(farmId) {
     console.log(farmId);
-    console.log(farms[1].selected);
+    console.log(`First farm: ${farms[0].selected}`);
     farms[1].selected = !farms[1].selected;
   }
 
   const farmsElements = farms.map((farm) => {
-    console.log(`${farm.id} ${farm.attributes.description}`);
+    useEffect(() => console.log(`${farm.id} ${farm.attributes.description}`), [farm.id]);
     farm.selected = false;
     return (
       <div key={farm.id}>
@@ -22,7 +22,7 @@ function WeatherPage(props) {
     );
   });
 
-  console.log(`First field: ${fields[0].attributes.description}`);
+  useEffect(() => console.log(`First field: ${fields[0].attributes.description}`), [fields[0]]);
 
   return (
     <div>

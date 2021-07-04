@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { companyForUserID, farmsForCompanyID, fieldsForCompanyID } from './getAgworldData';
 import TopBar from './topBar';
@@ -13,21 +13,21 @@ function Main(props) {
   const [currentPage, setCurrentPage] = useState('weather');
   let pageElement = <></>;
 
-  console.log(userName);
+  useEffect(() => console.log(userName), [userName]);
   if (!company) {
     company = companyForUserID(userId);
     companyName = company.attributes.name;
   }
-  console.log(`Company name: ${companyName}`);
+  useEffect(() => console.log(`Company name: ${companyName}`), [companyName]);
 
   if (!farms) farms = farmsForCompanyID(company.id);
   farms.forEach((farm) => {
-    console.log(`Farm description: ${farm.attributes.description}`);
+    useEffect(() => console.log(`Farm description: ${farm.attributes.description}`), [farm]);
   });
 
   if (!fields) fields = fieldsForCompanyID(company.id);
   fields.forEach((field) => {
-    console.log(`Field description: ${field.attributes.description}`);
+    useEffect(() => console.log(`Field description: ${field.attributes.description}`), [field]);
   });
 
   if (currentPage === 'weather') {
