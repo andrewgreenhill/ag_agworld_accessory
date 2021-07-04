@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import LoginScreen from './views/Login';
-import Main from './views/Main';
+import LoginScreen from './views/LoginScreen';
+import LoadDataIntoApp from './views/LoadDataIntoApp';
 import './assets/App.css';
 
 function App() {
@@ -30,7 +30,8 @@ function App() {
         />
       );
     } else {
-      screen = <Main title={title} userId={userId} userName={userName} thumbURL={thumbURL} />;
+      console.log(`=== Get data for ${userName} ===`); // Verbose - temporary line, QQQ
+      screen = <LoadDataIntoApp title={title} userId={userId} userName={userName} thumbURL={thumbURL} />;
     }
   }
 

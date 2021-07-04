@@ -1,34 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { companyForUserID, farmsForCompanyID, fieldsForCompanyID } from '../utils/GetAgworldData';
 import TopBar from '../components/TopBar';
+import MenuBar from '../components/MenuBar';
 import WeatherPage from './WeatherPage';
 
 function Main(props) {
-  const { title, userId, userName, thumbURL } = props;
-  let company;
-  let companyName;
-  let farms;
-  let fields;
+  const { title, userName, thumbURL, company, farms, fields } = props;
+  const companyName = company.attributes.name;
   const [currentPage, setCurrentPage] = useState('weather');
   let pageElement = <></>;
 
-  useEffect(() => console.log(userName), [userName]);
-  if (!company) {
-    company = companyForUserID(userId);
-    companyName = company.attributes.name;
-  }
-  useEffect(() => console.log(`Company name: ${companyName}`), [companyName]);
-
-  if (!farms) farms = farmsForCompanyID(company.id);
-  farms.forEach((farm) => {
-    useEffect(() => console.log(`Farm description: ${farm.attributes.description}`), [farm]);
-  });
-
-  if (!fields) fields = fieldsForCompanyID(company.id);
-  fields.forEach((field) => {
-    useEffect(() => console.log(`Field description: ${field.attributes.description}`), [field]);
-  });
+  console.log(userName);
 
   if (currentPage === 'weather') {
     pageElement = <WeatherPage farms={farms} fields={fields} setCurrentPage={setCurrentPage} />;
@@ -38,7 +20,8 @@ function Main(props) {
 
   return (
     <div>
-      <TopBar title={title} companyName={companyName} thumbURL={thumbURL} setCurrentPage={setCurrentPage} />
+      <TopBar title={title} companyName={companyName} thumbURL={thumbURL} />
+      <MenuBar setCurrentPage={setCurrentPage} />
       {pageElement}
     </div>
   );
@@ -46,9 +29,11 @@ function Main(props) {
 
 Main.propTypes = {
   title: PropTypes.string,
-  userId: PropTypes.number,
   userName: PropTypes.string,
   thumbURL: PropTypes.string,
+  company: PropTypes.any,
+  farms: PropTypes.any,
+  fields: PropTypes.any,
 };
 
 export default Main;

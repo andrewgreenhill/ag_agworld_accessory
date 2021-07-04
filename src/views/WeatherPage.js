@@ -11,7 +11,7 @@ function WeatherPage(props) {
   }
 
   const farmsElements = farms.map((farm) => {
-    useEffect(() => console.log(`${farm.id} ${farm.attributes.description}`), [farm.id]);
+    useEffect(() => console.log(`Farm #${farm.id} ${farm.attributes.description}`), [farm.id]);
     farm.selected = false;
     return (
       <div key={farm.id}>
