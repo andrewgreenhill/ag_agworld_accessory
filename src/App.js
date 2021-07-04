@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import LoginScreen from './Login';
-import Main from './Main';
-import './App.css';
+import LoginScreen from './views/Login';
+import Main from './views/Main';
+import './assets/App.css';
 
 function App() {
   const operational = true;

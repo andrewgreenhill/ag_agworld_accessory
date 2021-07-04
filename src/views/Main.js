@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { companyForUserID, farmsForCompanyID, fieldsForCompanyID } from './getAgworldData';
-import TopBar from './topBar';
-import WeatherPage from './weatherPage';
+import { companyForUserID, farmsForCompanyID, fieldsForCompanyID } from '../utils/GetAgworldData';
+import TopBar from '../components/TopBar';
+import WeatherPage from './WeatherPage';
 
 function Main(props) {
   const { title, userId, userName, thumbURL } = props;
