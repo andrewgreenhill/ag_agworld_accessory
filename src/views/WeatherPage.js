@@ -27,9 +27,10 @@ function WeatherPage(props) {
   return (
     <div>
       <div>
-        <span>Farms and Fields</span>
+        <span>Get Weather Data</span>
         <button onClick={() => setCurrentPage('')}>X</button>
       </div>
+      <div>Farms and Fields</div>
       <div>{farmsElements}</div>
     </div>
   );

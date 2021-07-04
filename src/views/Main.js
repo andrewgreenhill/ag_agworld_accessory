@@ -7,7 +7,7 @@ import WeatherPage from './WeatherPage';
 function Main(props) {
   const { title, userName, thumbURL, company, farms, fields } = props;
   const companyName = company.attributes.name;
-  const [currentPage, setCurrentPage] = useState('weather');
+  const [currentPage, setCurrentPage] = useState('');
   let pageElement = <></>;
 
   console.log(userName);
