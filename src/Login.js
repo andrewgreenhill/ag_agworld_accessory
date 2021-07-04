@@ -21,7 +21,7 @@ function LoginScreen(props) {
         }
         setThumbURL(userJSON.results[0].picture.thumbnail);
         const userID = parseInt(userJSON.results[0].id.value) || 1;
-        setTimeout(() => setUserId(userID), 50);
+        setUserId(userID);
       })
       .catch(() => console.error('Error: tryToLogIn() failed!'));
   }

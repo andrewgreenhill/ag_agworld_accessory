@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { companyForUserID, farmsForCompanyID, fieldsForCompanyID } from './getAgworldData';
 import TopBar from './topBar';
+import WeatherPage from './weatherPage';
 
 function Main(props) {
   const { title, userId, userName, thumbURL } = props;
@@ -9,6 +10,8 @@ function Main(props) {
   let companyName;
   let farms;
   let fields;
+  const [currentPage, setCurrentPage] = useState('weather');
+  let pageElement = <></>;
 
   console.log(userName);
   if (!company) {
@@ -27,10 +30,16 @@ function Main(props) {
     console.log(`Field description: ${field.attributes.description}`);
   });
 
+  if (currentPage === 'weather') {
+    pageElement = <WeatherPage farms={farms} fields={fields} setCurrentPage={setCurrentPage} />;
+  } else {
+    pageElement = <></>;
+  }
+
   return (
     <div>
-      <TopBar title={title} companyName={companyName} thumbURL={thumbURL} />
-      <p></p>
+      <TopBar title={title} companyName={companyName} thumbURL={thumbURL} setCurrentPage={setCurrentPage} />
+      {pageElement}
     </div>
   );
 }
