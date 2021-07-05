@@ -22,7 +22,7 @@ function WeatherPage(props) {
     );
   }
 
-  useEffect(() => console.log(`First field: ${fields[Object.keys(fields)[0]].attributes.description}`));
+  useEffect(() => console.log(`First field: ${Object.values(fields)[0].attributes.description}`));
 
   return (
     <div>
