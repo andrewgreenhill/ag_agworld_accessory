@@ -72,8 +72,8 @@ export function getCompanyForUserID(userId, setCompany) {
 export function getFarmsForCompanyID(companyId, setFarms) {
   setTimeout((companyId) => {
     // console.log(`This is a stub for getting Farms data. It ignored the companyID (${companyId})`);
-    setFarms([
-      {
+    setFarms({
+      987613: {
         id: '987613',
         type: 'farms',
         links: { self: 'http://example.org/user_api/v1/farms/987613' },
@@ -112,7 +112,7 @@ export function getFarmsForCompanyID(companyId, setFarms) {
           },
         },
       },
-      {
+      987614: {
         id: '987614',
         type: 'farms',
         links: { self: 'http://example.org/user_api/v1/farms/987614' },
@@ -151,7 +151,7 @@ export function getFarmsForCompanyID(companyId, setFarms) {
           },
         },
       },
-      {
+      987615: {
         id: '987615',
         type: 'farms',
         links: { self: 'http://example.org/user_api/v1/farms/987615' },
@@ -190,7 +190,7 @@ export function getFarmsForCompanyID(companyId, setFarms) {
           },
         },
       },
-      {
+      987619: {
         id: '987619',
         type: 'farms',
         links: { self: 'http://example.org/user_api/v1/farms/987619' },
@@ -229,7 +229,7 @@ export function getFarmsForCompanyID(companyId, setFarms) {
           },
         },
       },
-    ]);
+    });
   }, 200 + 1000 * Math.random());
 }
 
@@ -237,8 +237,8 @@ export function getFieldsForCompanyID(companyId, setFields) {
   setTimeout((companyId) => {
     // console.log(`This is a stub for getting Fields data. It ignored the companyID (${companyId})`);
     // This would find all farms with companyId, then find their fields
-    setFields([
-      {
+    setFields({
+      987654: {
         id: '987654',
         type: 'fields',
         links: { self: 'http://example.org/user_api/v1/fields/987654' },
@@ -281,7 +281,7 @@ export function getFieldsForCompanyID(companyId, setFields) {
           },
         },
       },
-      {
+      987655: {
         id: '987655',
         type: 'fields',
         links: { self: 'http://example.org/user_api/v1/fields/987655' },
@@ -324,7 +324,7 @@ export function getFieldsForCompanyID(companyId, setFields) {
           },
         },
       },
-      {
+      987656: {
         id: '987656',
         type: 'fields',
         links: { self: 'http://example.org/user_api/v1/fields/987656' },
@@ -367,7 +367,7 @@ export function getFieldsForCompanyID(companyId, setFields) {
           },
         },
       },
-      {
+      987657: {
         id: '987657',
         type: 'fields',
         links: { self: 'http://example.org/user_api/v1/fields/987657' },
@@ -410,7 +410,7 @@ export function getFieldsForCompanyID(companyId, setFields) {
           },
         },
       },
-      {
+      987658: {
         id: '987658',
         type: 'fields',
         links: { self: 'http://example.org/user_api/v1/fields/987658' },
@@ -453,7 +453,7 @@ export function getFieldsForCompanyID(companyId, setFields) {
           },
         },
       },
-      {
+      987659: {
         id: '987659',
         type: 'fields',
         links: { self: 'http://example.org/user_api/v1/fields/987659' },
@@ -496,6 +496,6 @@ export function getFieldsForCompanyID(companyId, setFields) {
           },
         },
       },
-    ]);
+    });
   }, 200 + 1000 * Math.random());
 }

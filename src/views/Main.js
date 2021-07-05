@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import TopBar from '../components/TopBar';
 import MenuBar from '../components/MenuBar';
@@ -10,7 +10,7 @@ function Main(props) {
   const [currentPage, setCurrentPage] = useState('');
   let pageElement = <></>;
 
-  console.log(userName);
+  useEffect(() => console.log(userName), [userName]);
 
   if (currentPage === 'weather') {
     pageElement = <WeatherPage farms={farms} fields={fields} setCurrentPage={setCurrentPage} />;

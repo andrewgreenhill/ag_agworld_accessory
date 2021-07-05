@@ -45,19 +45,6 @@ function LoadDataIntoApp(props) {
   }
 
   return <>{content}</>;
-
-  // useEffect(() => {
-  //   if (company && farms && fields && !requestCompany && !requestFarms && !requestFields) {
-  //     console.log(`Company name: ${companyName}`);
-  //     farms.forEach((farm) => {
-  //       console.log(`Farm description: ${farm.attributes.description}`);
-  //     });
-  //     fields.forEach((field) => {
-  //       console.log(`Field description: ${field.attributes.description}`);
-  //     });
-  //     console.log(`=== Got data for ${userName} ===`);
-  //   }
-  // }, [company, farms, fields]);
 }
 
 LoadDataIntoApp.propTypes = {

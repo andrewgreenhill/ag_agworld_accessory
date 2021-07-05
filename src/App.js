@@ -30,7 +30,6 @@ function App() {
         />
       );
     } else {
-      console.log(`=== Get data for ${userName} ===`); // Verbose - temporary line, QQQ
       screen = <LoadDataIntoApp title={title} userId={userId} userName={userName} thumbURL={thumbURL} />;
     }
   }

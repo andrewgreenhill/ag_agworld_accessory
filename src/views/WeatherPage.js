@@ -5,24 +5,24 @@ function WeatherPage(props) {
   const { farms, fields, setCurrentPage } = props;
 
   function toggleFarmSelection(farmId) {
-    console.log(farmId);
-    console.log(`First farm: ${farms[0].selected}`);
-    farms[1].selected = !farms[1].selected;
+    console.log(`Farm #${farmId} selected=${farms[farmId].selected}`);
+    farms[farmId].selected = !farms[farmId].selected;
   }
 
-  const farmsElements = farms.map((farm) => {
-    useEffect(() => console.log(`Farm #${farm.id} ${farm.attributes.description}`), [farm.id]);
-    farm.selected = false;
-    return (
-      <div key={farm.id}>
-        <button onClick={() => toggleFarmSelection(farm.id)}>
-          {(farm.selected ? 'v ' : '> ') + farm.attributes.description}
+  const farmsElements = [];
+  for (const farmId in farms) {
+    useEffect(() => console.log(`Farm #${farmId} ${farms[farmId].attributes.description}`));
+    farms[farmId].selected = false;
+    farmsElements.push(
+      <div key={farmId}>
+        <button onClick={() => toggleFarmSelection(farmId)}>
+          {(farms[farmId].selected ? 'v ' : '> ') + farms[farmId].attributes.description}
         </button>
       </div>
     );
-  });
+  }
 
-  useEffect(() => console.log(`First field: ${fields[0].attributes.description}`), [fields[0]]);
+  useEffect(() => console.log(`First field: ${fields[Object.keys(fields)[0]].attributes.description}`));
 
   return (
     <div>
