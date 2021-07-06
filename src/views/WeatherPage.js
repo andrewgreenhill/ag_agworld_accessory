@@ -1,28 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import FarmsAndFields from '../components/FarmsAndFields';
 import PropTypes from 'prop-types';
 
 function WeatherPage(props) {
   const { farms, fields, setCurrentPage } = props;
-
-  function toggleFarmSelection(farmId) {
-    console.log(`Farm #${farmId} selected=${farms[farmId].selected}`);
-    farms[farmId].selected = !farms[farmId].selected;
-  }
-
-  const farmsElements = [];
-  for (const farmId in farms) {
-    useEffect(() => console.log(`Farm #${farmId} ${farms[farmId].attributes.description}`));
-    farms[farmId].selected = false;
-    farmsElements.push(
-      <div key={farmId}>
-        <button onClick={() => toggleFarmSelection(farmId)}>
-          {(farms[farmId].selected ? 'v ' : '> ') + farms[farmId].attributes.description}
-        </button>
-      </div>
-    );
-  }
-
-  useEffect(() => console.log(`First field: ${Object.values(fields)[0].attributes.description}`));
 
   return (
     <div>
@@ -31,7 +12,7 @@ function WeatherPage(props) {
         <button onClick={() => setCurrentPage('')}>X</button>
       </div>
       <div>Farms and Fields</div>
-      <div>{farmsElements}</div>
+      <FarmsAndFields farms={farms} fields={fields} />
     </div>
   );
 }
