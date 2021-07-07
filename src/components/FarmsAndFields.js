@@ -1,39 +1,72 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 function FarmsAndFields(props) {
   const { farms, fields } = props;
-  const [farmSelected, setFarmSelected] = useState({});
-  const farmsElements = [];
+  const [farmExpanded, setFarmExpanded] = useState({}); // Track which farms are expanded
 
-  function toggleFarmSelection(farmId) {
-    console.log(`Farm #${farmId} selected=${farmSelected[farmId]}`);
-    let sfsNew = { ...farmSelected };
-    sfsNew[farmId] = !sfsNew[farmId];
-    setFarmSelected({ ...sfsNew });
+  // Create a structure to make it easier & more efficient to use the fields of each farm:
+  const farmFields = {};
+  Object.keys(farms).forEach((farmId) => {
+    farmFields[farmId] = [];
+  });
+  for (const fieldId in fields) {
+    farmFields[fields[fieldId].attributes.farm_id].push(fields[fieldId]);
   }
 
-  let updateFarmSelected = false;
-  let sfsNew = { ...farmSelected };
+  // Create a boolean in farmExpanded for each field.
+  // It's a bit tricky to update useState object properties:
+  let updateFarmExpanded = false;
+  let setFarmExpandedNew = { ...farmExpanded };
   for (const farmId in farms) {
-    if (sfsNew[farmId] === undefined) {
-      sfsNew[farmId] = false;
-      updateFarmSelected = true;
+    if (setFarmExpandedNew[farmId] === undefined) {
+      setFarmExpandedNew[farmId] = false;
+      updateFarmExpanded = true;
     }
   }
-  if (updateFarmSelected) setFarmSelected({ ...sfsNew });
+  if (updateFarmExpanded) setFarmExpanded({ ...setFarmExpandedNew });
 
+  // Create a button for each farm, and if the farm is 'expanded' then also list its fields
+  const farmsElements = [];
   for (const farmId in farms) {
-    farmsElements.push(
-      <div key={farmId}>
-        <button onClick={() => toggleFarmSelection(farmId)}>
-          {(farmSelected[farmId] ? '˅ ' : '˃ ') + farms[farmId].attributes.description}
-        </button>
-      </div>
-    );
+    farmsElements.push(<div key={farmId}>{farmAndFields(farmId)}</div>);
   }
 
-  useEffect(() => console.log(`First field: ${Object.values(fields)[0].attributes.description}`));
+  // A function that creates farm and field buttons:
+  function farmAndFields(farmId) {
+    function toggleFarmExpansion(farmId) {
+      let setFarmExpandedNew = { ...farmExpanded };
+      setFarmExpandedNew[farmId] = !setFarmExpandedNew[farmId];
+      setFarmExpanded({ ...setFarmExpandedNew });
+    }
+
+    // Farm button
+    const farm = (
+      <>
+        <button onClick={() => toggleFarmExpansion(farmId)}>
+          {(farmExpanded[farmId] ? '˅ ' : '˃ ') + farms[farmId].attributes.description}
+        </button>
+      </>
+    );
+
+    if (!farmExpanded[farmId]) return farm;
+
+    // Field buttons
+    let fieldList = farmFields[farmId].map((field) => {
+      return (
+        <div key={field.id}>
+          <button>{field.attributes.description}</button>
+        </div>
+      );
+    });
+
+    return (
+      <>
+        {farm}
+        {fieldList.length > 0 ? <div>{fieldList}</div> : <div>No fields</div>}
+      </>
+    );
+  }
 
   return <div>{farmsElements}</div>;
 }

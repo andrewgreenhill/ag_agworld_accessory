@@ -66,7 +66,7 @@ export function getCompanyForUserID(userId, setCompany) {
         },
       },
     });
-  }, 200 + 1000 * Math.random());
+  }, 100 + 500 * Math.random());
 }
 
 export function getFarmsForCompanyID(companyId, setFarms) {
