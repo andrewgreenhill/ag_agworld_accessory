@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 function FarmsAndFields(props) {
-  const { farms, fields } = props;
+  const { farms, fields, setWeatherForField } = props;
   const [farmExpanded, setFarmExpanded] = useState({}); // Track which farms are expanded
 
   // Create a structure to make it easier & more efficient to use the fields of each farm:
@@ -38,6 +38,7 @@ function FarmsAndFields(props) {
       let setFarmExpandedNew = { ...farmExpanded };
       setFarmExpandedNew[farmId] = !setFarmExpandedNew[farmId];
       setFarmExpanded({ ...setFarmExpandedNew });
+      setWeatherForField();
     }
 
     // Farm button
@@ -55,7 +56,13 @@ function FarmsAndFields(props) {
     let fieldList = farmFields[farmId].map((field) => {
       return (
         <div key={field.id}>
-          <button>{field.attributes.description}</button>
+          <button
+            onClick={() => {
+              setWeatherForField(field.id);
+            }}
+          >
+            {field.attributes.description}
+          </button>
         </div>
       );
     });
@@ -75,6 +82,7 @@ function FarmsAndFields(props) {
 FarmsAndFields.propTypes = {
   farms: PropTypes.any,
   fields: PropTypes.any,
+  setWeatherForField: PropTypes.any,
 };
 
 export default FarmsAndFields;

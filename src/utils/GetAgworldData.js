@@ -269,7 +269,7 @@ export function getFieldsForCompanyID(companyId, setFields) {
           season_id: null,
           seed_cost: null,
           updated_at: '2011-06-15T10:30:00.000+08:00',
-          weatherStation: '',
+          weatherStation: 'IDW60801/IDW60801.95622',
           yield_price: null,
         },
         relationships: {
@@ -355,7 +355,7 @@ export function getFieldsForCompanyID(companyId, setFields) {
           season_id: null,
           seed_cost: null,
           updated_at: '2011-06-15T10:30:00.000+08:00',
-          weatherStation: '',
+          weatherStation: 'IDW60801/IDW60801.95622',
           yield_price: null,
         },
         relationships: {
