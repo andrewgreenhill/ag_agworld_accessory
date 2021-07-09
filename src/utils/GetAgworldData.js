@@ -230,7 +230,7 @@ export function getFarmsForCompanyID(companyId, setFarms) {
         },
       },
     });
-  }, 200 + 1000 * Math.random());
+  }, 200 + 800 * Math.random());
 }
 
 export function getFieldsForCompanyID(companyId, setFields) {
@@ -269,7 +269,7 @@ export function getFieldsForCompanyID(companyId, setFields) {
           season_id: null,
           seed_cost: null,
           updated_at: '2011-06-15T10:30:00.000+08:00',
-          weatherStation: 'IDW60801/IDW60801.95622',
+          weatherStation: 'IDW60801/IDW60801.95632',
           yield_price: null,
         },
         relationships: {
@@ -355,7 +355,7 @@ export function getFieldsForCompanyID(companyId, setFields) {
           season_id: null,
           seed_cost: null,
           updated_at: '2011-06-15T10:30:00.000+08:00',
-          weatherStation: 'IDW60801/IDW60801.95622',
+          weatherStation: 'IDW60801/IDW60801.95611',
           yield_price: null,
         },
         relationships: {
@@ -398,7 +398,7 @@ export function getFieldsForCompanyID(companyId, setFields) {
           season_id: null,
           seed_cost: null,
           updated_at: '2011-06-15T10:30:00.000+08:00',
-          weatherStation: '',
+          weatherStation: 'IDW60801/IDW60801.95621',
           yield_price: null,
         },
         relationships: {
@@ -441,7 +441,7 @@ export function getFieldsForCompanyID(companyId, setFields) {
           season_id: null,
           seed_cost: null,
           updated_at: '2011-06-15T10:30:00.000+08:00',
-          weatherStation: '',
+          weatherStation: 'IDW60801/IDW60801.95641',
           yield_price: null,
         },
         relationships: {
@@ -484,7 +484,7 @@ export function getFieldsForCompanyID(companyId, setFields) {
           season_id: null,
           seed_cost: null,
           updated_at: '2011-06-15T10:30:00.000+08:00',
-          weatherStation: '',
+          weatherStation: 'IDW60801/IDW60801.95641',
           yield_price: null,
         },
         relationships: {
@@ -497,5 +497,5 @@ export function getFieldsForCompanyID(companyId, setFields) {
         },
       },
     });
-  }, 200 + 1000 * Math.random());
+  }, 200 + 800 * Math.random());
 }
