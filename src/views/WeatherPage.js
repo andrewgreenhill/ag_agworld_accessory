@@ -1,38 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
+import FarmsAndFields from '../components/FarmsAndFields';
+import WeatherObservations from '../components/WeatherObservations';
 import PropTypes from 'prop-types';
 
 function WeatherPage(props) {
-  const { farms, fields, setCurrentPage } = props;
-
-  function toggleFarmSelection(farmId) {
-    console.log(`Farm #${farmId} selected=${farms[farmId].selected}`);
-    farms[farmId].selected = !farms[farmId].selected;
-  }
-
-  const farmsElements = [];
-  for (const farmId in farms) {
-    useEffect(() => console.log(`Farm #${farmId} ${farms[farmId].attributes.description}`));
-    farms[farmId].selected = false;
-    farmsElements.push(
-      <div key={farmId}>
-        <button onClick={() => toggleFarmSelection(farmId)}>
-          {(farms[farmId].selected ? 'v ' : '> ') + farms[farmId].attributes.description}
-        </button>
-      </div>
-    );
-  }
-
-  useEffect(() => console.log(`First field: ${fields[Object.keys(fields)[0]].attributes.description}`));
+  const { farms, fields, setCurrentPage, companyName } = props;
+  const [weatherForField, setWeatherForField] = useState();
 
   return (
-    <div>
+    <>
       <div>
         <span>Get Weather Data</span>
         <button onClick={() => setCurrentPage('')}>X</button>
       </div>
-      <div>Farms and Fields</div>
-      <div>{farmsElements}</div>
-    </div>
+      <div>
+        <span className="WeatherFarmsFields">
+          <span>{companyName}</span>
+          <p></p>
+          <FarmsAndFields farms={farms} fields={fields} setWeatherForField={setWeatherForField} />
+        </span>
+        <span className="WeatherObservation">
+          <div>Weather Observation</div>
+          {weatherForField ? <WeatherObservations field={fields[weatherForField]} /> : ''}
+        </span>
+      </div>
+    </>
   );
 }
 
@@ -41,6 +33,7 @@ WeatherPage.propTypes = {
   farms: PropTypes.any,
   fields: PropTypes.any,
   setCurrentPage: PropTypes.any,
+  companyName: PropTypes.string,
 };
 
 export default WeatherPage;

@@ -13,7 +13,9 @@ function Main(props) {
   useEffect(() => console.log(userName), [userName]);
 
   if (currentPage === 'weather') {
-    pageElement = <WeatherPage farms={farms} fields={fields} setCurrentPage={setCurrentPage} />;
+    pageElement = (
+      <WeatherPage farms={farms} fields={fields} setCurrentPage={setCurrentPage} companyName={companyName} />
+    );
   } else {
     pageElement = <></>;
   }
