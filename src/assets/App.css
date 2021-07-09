@@ -50,3 +50,23 @@
   width: 30px;
   height: 30px;
 }
+
+.WeatherFarmsFields {
+  border: 1px solid gray;
+  width: 25%;
+  height: 500px;
+  display: inline-block;
+  position: absolute;
+  left: 20%;
+  top: 15%;
+}
+
+.WeatherObservation {
+  border: 1px solid gray;
+  width: 35%;
+  height: 500px;
+  display: inline-block;
+  position: absolute;
+  left: 45%;
+  top: 15%;
+}
