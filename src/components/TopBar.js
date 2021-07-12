@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 function TopBar(props) {
   const { title, companyName, thumbURL } = props;
   return (
-    <div>
+    <div className="TopBarBox">
       <img src="https://avatars0.githubusercontent.com/u/6791849?v=4" className="topBarIcon" />
-      <span> {title} </span>
-      <span> {companyName} </span>
-      <img src={thumbURL} className="topBarIcon" />
-      <span>By Andrew Greenhill</span>
+      <span className="topBarTitle"> {title} </span>
+      <span className="topBarCompanyName"> {companyName} </span>
+      <img src={thumbURL} className="avatar" />
+      <span className="topBarCredit">By Andrew Greenhill</span>
     </div>
   );
 }

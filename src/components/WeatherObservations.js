@@ -53,7 +53,7 @@ function WeatherObservations(props) {
         setWeatherConds(observation.weather);
       });
     } else {
-      setStationName('Not specified');
+      setStationName('Not configured for this field');
     }
     setGotWeatherForStation(field.id);
   }

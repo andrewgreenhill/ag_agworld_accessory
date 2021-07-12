@@ -5,7 +5,10 @@ function MenuBar(props) {
   const { setCurrentPage } = props;
   return (
     <div>
-      <button onClick={() => setCurrentPage('weather')}> Weather </button>
+      <button className="buttonWeather" onClick={() => setCurrentPage('weather')}>
+        {' '}
+        Weather{' '}
+      </button>
     </div>
   );
 }

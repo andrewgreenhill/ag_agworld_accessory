@@ -39,7 +39,7 @@ function LoadDataIntoApp(props) {
     content = (
       <>
         <TopBar title={title} companyName="" thumbURL={thumbURL} />
-        <div>Loading...</div>
+        <div className="Loading">Loading...</div>
       </>
     );
   }
