@@ -25,9 +25,20 @@ That triggers an API request to www.bom.gov.au to get weather for that field.
 
 ========================================================
 
-To run _locally_ use: yarn start  
+### To run _locally_ use: yarn start
+
 => http://localhost:3000/ag_agworld_accessory
 
-To deploy to _Git Hub pages_, use: npm run deploy  
+### To deploy to _Git Hub pages_, use: npm run deploy
+
 =>
 https://andrewgreenhill.github.io/ag_agworld_accessory/
+
+========================================================
+
+### TO DO
+
+- Do the CSS properly!
+- Make use of a testing framework - probably _Jest_
+- Add internal documentation
+- Add tests to handle bad data & API responses!
