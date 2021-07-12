@@ -1,4 +1,29 @@
-# Getting Started with Create React App
+# AG's Agworld Accessory
+
+Get data from a weather station for completing Agworld's New Actual Weather Record.
+
+## Basic usage instructions and explanation:
+
+### Click Login
+
+That simulates a login, getting a random user avatar,  
+then simulates getting Agworld data for that user, for a company, farms and fields.
+
+Note: The data for fields has been supplemented for a property for weather station, except for tomatoes where that was intentionally left missing. Also the farm "Pasture" intentionally has no fields.
+
+### Click Weather
+
+This opens a dialog for getting weather data for a field
+
+### Click a Farm
+
+That opens (or closes) a list of that farm's fields.
+
+### Click a Field
+
+That triggers an API request to www.bom.gov.au to get weather for that field.
+
+========================================================
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

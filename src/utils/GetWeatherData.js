@@ -1,4 +1,4 @@
-const ca_proxy = 'http://127.0.0.1:8080/';
+const ca_proxy = 'https://cors-anywhere-ag.herokuapp.com/';
 
 export function weatherStationData(station) {
   // station is expected to be a string like "IDW60801/IDW60801.95622"

@@ -35,36 +35,32 @@ function LoginScreen(props) {
         </header>
         <div>
           <div>
-            <label htmlFor="userName" className="QQQ">
-              User Name
-            </label>
+            <label htmlFor="userName">User Name</label>
             <input
               type="text"
               name="userName"
               value={userName}
               onChange={(event) => setUserName(event.target.value)}
-              className="QQQ"
+              className="CredentialsInput"
               required
             ></input>
           </div>
           <div>
-            <label htmlFor="password" className="QQQ">
-              Password
-            </label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
               value={plainTextPassword}
               onChange={(event) => setPassword(event.target.value)}
-              className="QQQ"
+              className="CredentialsInput"
               required
             ></input>
           </div>
-          <button onClick={attemptLogin}>{`LOG IN >`}</button>
+          <button className="LoginButton" onClick={attemptLogin}>{`LOG IN >`}</button>
           <div>
             <a
+              className="CredentialsInput"
               href="javascript:alert('Password reset is not yet implemented. Please contact Andrew.');"
-              className="QQQ"
             >
               Forgotten your password?
             </a>
