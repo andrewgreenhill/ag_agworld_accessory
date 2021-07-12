@@ -9,7 +9,7 @@ Get data from a weather station for completing Agworld's New Actual Weather Reco
 That simulates a login, getting a random user avatar,  
 then simulates getting Agworld data for that user, for a company, farms and fields.
 
-Note: The data for fields has been supplemented for a property for weather station, except for tomatoes where that was intentionally left missing. Also the farm "Pasture" intentionally has no fields.
+Note: The fields data has been supplemented by the addition of a 'weather station' property, except for tomatoes where that was intentionally left missing. Also the farm "Pasture" intentionally has no fields.
 
 ### Click Weather
 
