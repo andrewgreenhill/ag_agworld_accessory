@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .App-logo {
@@ -39,16 +40,73 @@
 
 .loginBox {
   background-color: #dddddd;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
 }
 
 .loginIcon {
-  width: 90px;
-  height: 90px;
+  width: 85px;
+  height: 85px;
+  margin: 0.5%;
+}
+
+.LoginButton {
+  margin: 0.5%;
+}
+
+.CredentialsInput {
+  margin: 0.5%;
+}
+
+.TopBarBox {
+  background-color: #dddddd;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 35px;
 }
 
 .topBarIcon {
   width: 30px;
   height: 30px;
+  position: absolute;
+  left: 2%;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: calc(8% + 120px);
+  top: 2%;
+}
+
+.topBarTitle {
+  position: absolute;
+  left: 8%;
+  top: 2%;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topBarCredit {
+  position: absolute;
+  right: 3%;
+  top: 2%;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topBarCompanyName {
+  position: absolute;
+  left: 40%;
+  top: 2%;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .WeatherFarmsFields {
@@ -69,4 +127,46 @@
   position: absolute;
   left: 45%;
   top: 15%;
+}
+
+.WeatherFormLabel {
+  position: absolute;
+  left: 4%;
+}
+
+.WeatherFormText {
+  position: relative;
+  left: 70px;
+}
+
+.Loading {
+  position: absolute;
+  left: 42%;
+  top: 6%;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttonWeather {
+  position: absolute;
+  left: 2%;
+  top: calc(2% + 40px);
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.GetWeatherData {
+  position: absolute;
+  left: 20%;
+  top: 11%;
+}
+
+.GetWeatherDataX {
+  position: absolute;
+  left: 79%;
+  top: 11%;
+}
+
+.WeatherFormText {
+  width: 210px;
 }

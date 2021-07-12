@@ -53,7 +53,7 @@ function WeatherObservations(props) {
         setWeatherConds(observation.weather);
       });
     } else {
-      setStationName('Not specified');
+      setStationName('Not configured for this field');
     }
     setGotWeatherForStation(field.id);
   }
@@ -63,7 +63,7 @@ function WeatherObservations(props) {
       {field.attributes.description}
       <p></p>
       <div>
-        <label htmlFor="WeatherStation" hidden className="QQQ">
+        <label htmlFor="WeatherStation" hidden className="WeatherFormLabel">
           Weather Station
         </label>
         <input
@@ -71,63 +71,63 @@ function WeatherObservations(props) {
           name="WeatherStation"
           readOnly
           value={field.attributes.weatherStation}
-          className="QQQ"
+          className="WeatherFormText"
           hidden
         ></input>
       </div>
       <div>
-        <label htmlFor="StationName" className="QQQ">
+        <label htmlFor="StationName" className="WeatherFormLabel">
           Station Name
         </label>
-        <input type="text" name="StationName" readOnly value={stationName} className="QQQ"></input>
+        <input type="text" name="StationName" readOnly value={stationName} className="WeatherFormText"></input>
       </div>
       <div>
-        <label htmlFor="ObservTime" className="QQQ">
+        <label htmlFor="ObservTime" className="WeatherFormLabel">
           Observation time
         </label>
-        <input type="text" name="ObservTime" readOnly value={observTime} className="QQQ"></input>
+        <input type="text" name="ObservTime" readOnly value={observTime} className="WeatherFormText"></input>
       </div>
       <div>
-        <label htmlFor="WindSpeed" className="QQQ">
+        <label htmlFor="WindSpeed" className="WeatherFormLabel">
           Wind Speed
         </label>
-        <input type="text" name="WindSpeed" readOnly value={windSpeed} className="QQQ"></input>
+        <input type="text" name="WindSpeed" readOnly value={windSpeed} className="WeatherFormText"></input>
       </div>
       <div>
-        <label htmlFor="WindDirection" className="QQQ">
+        <label htmlFor="WindDirection" className="WeatherFormLabel">
           Wind Direction
         </label>
-        <input type="text" name="WindDirection" readOnly value={windDirection} className="QQQ"></input>
+        <input type="text" name="WindDirection" readOnly value={windDirection} className="WeatherFormText"></input>
       </div>
       <div>
-        <label htmlFor="DeltaT" className="QQQ">
+        <label htmlFor="DeltaT" className="WeatherFormLabel">
           Delta T
         </label>
-        <input type="text" name="DeltaT" readOnly value={deltaT} className="QQQ"></input>
+        <input type="text" name="DeltaT" readOnly value={deltaT} className="WeatherFormText"></input>
       </div>
       <div>
-        <label htmlFor="Temperature" className="QQQ">
+        <label htmlFor="Temperature" className="WeatherFormLabel">
           Temperature
         </label>
-        <input type="text" name="Temperature" readOnly value={temperature} className="QQQ"></input>
+        <input type="text" name="Temperature" readOnly value={temperature} className="WeatherFormText"></input>
       </div>
       <div>
-        <label htmlFor="WindGustSpeed" className="QQQ">
+        <label htmlFor="WindGustSpeed" className="WeatherFormLabel">
           Wind Gust Speed
         </label>
-        <input type="text" name="WindGustSpeed" readOnly value={windGustSpeed} className="QQQ"></input>
+        <input type="text" name="WindGustSpeed" readOnly value={windGustSpeed} className="WeatherFormText"></input>
       </div>
       <div>
-        <label htmlFor="Humidity" className="QQQ">
+        <label htmlFor="Humidity" className="WeatherFormLabel">
           Humidity
         </label>
-        <input type="text" name="Humidity" readOnly value={humidity} className="QQQ"></input>
+        <input type="text" name="Humidity" readOnly value={humidity} className="WeatherFormText"></input>
       </div>
       <div>
-        <label htmlFor="WeatherConditions" className="QQQ">
+        <label htmlFor="WeatherConditions" className="WeatherFormLabel">
           Weather Conditions
         </label>
-        <input type="text" name="WeatherConditions" readOnly value={weatherConds} className="QQQ"></input>
+        <input type="text" name="WeatherConditions" readOnly value={weatherConds} className="WeatherFormText"></input>
       </div>
     </>
   );

@@ -10,8 +10,10 @@ function WeatherPage(props) {
   return (
     <>
       <div>
-        <span>Get Weather Data</span>
-        <button onClick={() => setCurrentPage('')}>X</button>
+        <span className="GetWeatherData">Get Weather Data</span>
+        <button className="GetWeatherDataX" onClick={() => setCurrentPage('')}>
+          X
+        </button>
       </div>
       <div>
         <span className="WeatherFarmsFields">
