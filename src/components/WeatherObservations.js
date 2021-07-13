@@ -4,7 +4,7 @@ import weatherStationData from '../utils/GetWeatherData';
 import formatBOMtime from '../utils/TimeConvert';
 
 function WeatherObservations(props) {
-  const { field } = props;
+  const { field, setWaitingForRequest } = props;
 
   const [gotWeatherForStation, setGotWeatherForStation] = useState();
   const [stationName, setStationName] = useState('');
@@ -40,7 +40,9 @@ function WeatherObservations(props) {
     // setWeatherConds('');
     if (field.attributes.weatherStation) {
       // Request data from the weather service
+      setWaitingForRequest(true);
       weatherStationData(field.attributes.weatherStation).then((weatherJSON) => {
+        setWaitingForRequest(false);
         const observation = weatherJSON.observations.data[0];
         setStationName(observation.name);
         setObservTime(new Date(formatBOMtime(observation.local_date_time_full)));
@@ -136,6 +138,7 @@ function WeatherObservations(props) {
 // Prop Type Validation:
 WeatherObservations.propTypes = {
   field: PropTypes.any,
+  setWaitingForRequest: PropTypes.any,
 };
 
 export default WeatherObservations;

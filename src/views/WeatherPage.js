@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 function WeatherPage(props) {
   const { farms, fields, setCurrentPage, companyName } = props;
   const [weatherForField, setWeatherForField] = useState();
+  const [waitingForRequest, setWaitingForRequest] = useState();
 
   return (
     <>
@@ -23,7 +24,12 @@ function WeatherPage(props) {
         </span>
         <span className="WeatherObservation">
           <div>Weather Observation</div>
-          {weatherForField ? <WeatherObservations field={fields[weatherForField]} /> : ''}
+          {weatherForField ? (
+            <WeatherObservations field={fields[weatherForField]} setWaitingForRequest={setWaitingForRequest} />
+          ) : (
+            ''
+          )}
+          {waitingForRequest ? <p>Getting weather data...</p> : <></>}
         </span>
       </div>
     </>
