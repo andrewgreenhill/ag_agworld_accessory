@@ -24,6 +24,7 @@ function Main(props) {
     <div>
       <TopBar title={title} companyName={companyName} thumbURL={thumbURL} />
       <MenuBar setCurrentPage={setCurrentPage} />
+      <p className="systemNotificationText">I have paused operating this app because of a Heroku cost increase :^(</p>
       {pageElement}
     </div>
   );
