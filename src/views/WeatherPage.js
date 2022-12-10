@@ -3,7 +3,7 @@ import FarmsAndFields from '../components/FarmsAndFields';
 import WeatherObservations from '../components/WeatherObservations';
 import PropTypes from 'prop-types';
 
-function WeatherPage(props) {
+function WeatherPageerPage(props) {
   const { farms, fields, setCurrentPage, companyName } = props;
   const [weatherForField, setWeatherForField] = useState();
   const [waitingForRequest, setWaitingForRequest] = useState();
