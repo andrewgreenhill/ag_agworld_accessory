@@ -139,6 +139,13 @@
   left: 70px;
 }
 
+.systemNotificationText {
+  color: rgb(200, 7, 7);
+  position: relative;
+  top: 26px;
+  font-size: 1.1em;
+}
+
 .Loading {
   position: absolute;
   left: 42%;
