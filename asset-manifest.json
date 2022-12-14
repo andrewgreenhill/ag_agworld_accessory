@@ -1,22 +1,15 @@
 {
   "files": {
-    "main.css": "/ag_agworld_accessory/static/css/main.b1b03756.chunk.css",
-    "main.js": "/ag_agworld_accessory/static/js/main.766cd655.chunk.js",
-    "main.js.map": "/ag_agworld_accessory/static/js/main.766cd655.chunk.js.map",
-    "runtime-main.js": "/ag_agworld_accessory/static/js/runtime-main.b2d00438.js",
-    "runtime-main.js.map": "/ag_agworld_accessory/static/js/runtime-main.b2d00438.js.map",
-    "static/js/2.784e1f85.chunk.js": "/ag_agworld_accessory/static/js/2.784e1f85.chunk.js",
-    "static/js/2.784e1f85.chunk.js.map": "/ag_agworld_accessory/static/js/2.784e1f85.chunk.js.map",
-    "static/js/3.1594bc59.chunk.js": "/ag_agworld_accessory/static/js/3.1594bc59.chunk.js",
-    "static/js/3.1594bc59.chunk.js.map": "/ag_agworld_accessory/static/js/3.1594bc59.chunk.js.map",
+    "main.css": "/ag_agworld_accessory/static/css/main.5c5678af.css",
+    "main.js": "/ag_agworld_accessory/static/js/main.f0d8bdc4.js",
+    "static/js/787.a6b1a368.chunk.js": "/ag_agworld_accessory/static/js/787.a6b1a368.chunk.js",
     "index.html": "/ag_agworld_accessory/index.html",
-    "static/css/main.b1b03756.chunk.css.map": "/ag_agworld_accessory/static/css/main.b1b03756.chunk.css.map",
-    "static/js/2.784e1f85.chunk.js.LICENSE.txt": "/ag_agworld_accessory/static/js/2.784e1f85.chunk.js.LICENSE.txt"
+    "main.5c5678af.css.map": "/ag_agworld_accessory/static/css/main.5c5678af.css.map",
+    "main.f0d8bdc4.js.map": "/ag_agworld_accessory/static/js/main.f0d8bdc4.js.map",
+    "787.a6b1a368.chunk.js.map": "/ag_agworld_accessory/static/js/787.a6b1a368.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.b2d00438.js",
-    "static/js/2.784e1f85.chunk.js",
-    "static/css/main.b1b03756.chunk.css",
-    "static/js/main.766cd655.chunk.js"
+    "static/css/main.5c5678af.css",
+    "static/js/main.f0d8bdc4.js"
   ]
 }
